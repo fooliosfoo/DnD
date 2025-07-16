@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D&D 5e Character Sheet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>D&D Character Sheet</h1>
+  </header>
+
+  <main>
+    <section id="character-info">
+      <h2>Character Information</h2>
+      <label>Name: <input type="text" id="char-name" /></label>
+      <label>Class & Level: <input type="text" id="char-class" /></label>
+      <label>Race: <input type="text" id="char-race" /></label>
+      <label>Background: <input type="text" id="char-background" /></label>
+    </section>
+
+    <section id="ability-scores">
+      <h2>Ability Scores</h2>
+      <div class="abilities">
+        <div><strong>STR</strong><input type="number" /></div>
+        <div><strong>DEX</strong><input type="number" /></div>
+        <div><strong>CON</strong><input type="number" /></div>
+        <div><strong>INT</strong><input type="number" /></div>
+        <div><strong>WIS</strong><input type="number" /></div>
+        <div><strong>CHA</strong><input type="number" /></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><label><input type="checkbox" /> Acrobatics (Dex)</label></li>
+        <li><label><input type="checkbox" /> Stealth (Dex)</label></li>
+        <li><label><input type="checkbox" /> Arcana (Int)</label></li>
+        <!-- Add all D&D 5e skills here -->
+      </ul>
+    </section>
+
+    <!-- Add more sections: HP, Attacks, Spells, Inventory, etc. -->
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
