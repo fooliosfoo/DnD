@@ -1,54 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>D&D 5e Character Sheet</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header, footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff;
+    }
+    section {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+    }
+    h2 {
+      border-bottom: 2px solid #000;
+      padding-bottom: 0.5rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-6 { grid-template-columns: repeat(6, 1fr); }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 0.25rem 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>D&D Character Sheet</h1>
+    <h1>D&D 5e Character Sheet</h1>
   </header>
-
   <main>
-    <section id="character-info">
-      <h2>Character Information</h2>
-      <label>Name: <input type="text" id="char-name" /></label>
-      <label>Class & Level: <input type="text" id="char-class" /></label>
-      <label>Race: <input type="text" id="char-race" /></label>
-      <label>Background: <input type="text" id="char-background" /></label>
+    <section id="basic-info">
+      <h2>Character Info</h2>
+      <div class="grid grid-3">
+        <div><label>Name:<input type="text" id="name"></label></div>
+        <div><label>Class & Level:<input type="text" id="class"></label></div>
+        <div><label>Background:<input type="text" id="background"></label></div>
+        <div><label>Player Name:<input type="text" id="player"></label></div>
+        <div><label>Race:<input type="text" id="race"></label></div>
+        <div><label>Alignment:<input type="text" id="alignment"></label></div>
+        <div><label>Experience Points:<input type="number" id="xp"></label></div>
+      </div>
     </section>
 
     <section id="ability-scores">
       <h2>Ability Scores</h2>
-      <div class="abilities">
-        <div><strong>STR</strong><input type="number" /></div>
-        <div><strong>DEX</strong><input type="number" /></div>
-        <div><strong>CON</strong><input type="number" /></div>
-        <div><strong>INT</strong><input type="number" /></div>
-        <div><strong>WIS</strong><input type="number" /></div>
-        <div><strong>CHA</strong><input type="number" /></div>
+      <div class="grid grid-6">
+        <div><label>STR:<input type="number"></label></div>
+        <div><label>DEX:<input type="number"></label></div>
+        <div><label>CON:<input type="number"></label></div>
+        <div><label>INT:<input type="number"></label></div>
+        <div><label>WIS:<input type="number"></label></div>
+        <div><label>CHA:<input type="number"></label></div>
+      </div>
+    </section>
+
+    <section id="combat">
+      <h2>Combat Stats</h2>
+      <div class="grid grid-3">
+        <div><label>Armor Class:<input type="number"></label></div>
+        <div><label>Initiative:<input type="number"></label></div>
+        <div><label>Speed:<input type="text"></label></div>
+        <div><label>Hit Point Maximum:<input type="number"></label></div>
+        <div><label>Current HP:<input type="number"></label></div>
+        <div><label>Temporary HP:<input type="number"></label></div>
+        <div><label>Hit Dice:<input type="text"></label></div>
+        <div><label>Death Saves:<input type="text"></label></div>
       </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li><label><input type="checkbox" /> Acrobatics (Dex)</label></li>
-        <li><label><input type="checkbox" /> Stealth (Dex)</label></li>
-        <li><label><input type="checkbox" /> Arcana (Int)</label></li>
-        <!-- Add all D&D 5e skills here -->
+        <li><label><input type="checkbox"> Acrobatics (DEX)</label></li>
+        <li><label><input type="checkbox"> Animal Handling (WIS)</label></li>
+        <li><label><input type="checkbox"> Arcana (INT)</label></li>
+        <li><label><input type="checkbox"> Athletics (STR)</label></li>
+        <li><label><input type="checkbox"> Deception (CHA)</label></li>
+        <li><label><input type="checkbox"> History (INT)</label></li>
+        <li><label><input type="checkbox"> Insight (WIS)</label></li>
+        <li><label><input type="checkbox"> Intimidation (CHA)</label></li>
+        <li><label><input type="checkbox"> Investigation (INT)</label></li>
+        <li><label><input type="checkbox"> Medicine (WIS)</label></li>
+        <li><label><input type="checkbox"> Nature (INT)</label></li>
+        <li><label><input type="checkbox"> Perception (WIS)</label></li>
+        <li><label><input type="checkbox"> Performance (CHA)</label></li>
+        <li><label><input type="checkbox"> Persuasion (CHA)</label></li>
+        <li><label><input type="checkbox"> Religion (INT)</label></li>
+        <li><label><input type="checkbox"> Sleight of Hand (DEX)</label></li>
+        <li><label><input type="checkbox"> Stealth (DEX)</label></li>
+        <li><label><input type="checkbox"> Survival (WIS)</label></li>
       </ul>
     </section>
 
-    <!-- Add more sections: HP, Attacks, Spells, Inventory, etc. -->
+    <section id="attacks">
+      <h2>Attacks and Spellcasting</h2>
+      <div class="grid grid-3">
+        <div><label>Weapon/Spell:<input type="text"></label></div>
+        <div><label>Attack Bonus:<input type="text"></label></div>
+        <div><label>Damage/Type:<input type="text"></label></div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Features and Traits</h2>
+      <textarea rows="6"></textarea>
+    </section>
+
+    <section id="equipment">
+      <h2>Equipment</h2>
+      <textarea rows="4"></textarea>
+      <div class="grid grid-5">
+        <div><label>CP:<input type="number"></label></div>
+        <div><label>SP:<input type="number"></label></div>
+        <div><label>EP:<input type="number"></label></div>
+        <div><label>GP:<input type="number"></label></div>
+        <div><label>PP:<input type="number"></label></div>
+      </div>
+    </section>
+
+    <section id="spells">
+      <h2>Spells</h2>
+      <label>Spellcasting Ability:<input type="text"></label>
+      <label>Spell Save DC:<input type="text"></label>
+      <label>Spell Attack Bonus:<input type="text"></label>
+      <textarea rows="4" placeholder="Cantrips, 1st Level, etc..."></textarea>
+    </section>
+
+    <section id="personality">
+      <h2>Personality</h2>
+      <label>Personality Traits:<textarea rows="2"></textarea></label>
+      <label>Ideals:<textarea rows="2"></textarea></label>
+      <label>Bonds:<textarea rows="2"></textarea></label>
+      <label>Flaws:<textarea rows="2"></textarea></label>
+    </section>
+
+    <section id="backstory">
+      <h2>Backstory</h2>
+      <textarea rows="6"></textarea>
+    </section>
   </main>
-
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>© 2025 D&D Character Sheet</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
