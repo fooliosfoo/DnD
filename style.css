@@ -1,46 +1,96 @@
+/* style.css - Styling for D&D Character Sheet */
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f2f2f2;
-  color: #333;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-header, footer {
+header,
+footer {
+  background-color: #222;
+  color: #fff;
   text-align: center;
   padding: 1rem;
-  background: #222;
-  color: white;
 }
 
 main {
-  max-width: 900px;
+  max-width: 960px;
   margin: auto;
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
 
 h2 {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #000;
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 label {
   display: block;
-  margin: 0.5rem 0;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
-input[type="text"],
-input[type="number"] {
-  padding: 0.4rem;
+input,
+textarea {
   width: 100%;
-  max-width: 300px;
+  padding: 0.5rem;
   margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.abilities {
-  display: flex;
+textarea {
+  resize: vertical;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.25rem 0;
+}
+
+.grid {
+  display: grid;
   gap: 1rem;
-  flex-wrap: wrap;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-5,
+  .grid-6 {
+    grid-template-columns: 1fr;
+  }
 }
